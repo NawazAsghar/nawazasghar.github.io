@@ -9,13 +9,13 @@
 :root {
     --BG_color: rgba(217, 217, 217, 1);
     --text_color: #000000;
-    --img: url('/images/DiskTopLight.jpg')no-repeat center center / cover;
+    --img: url('./DiskTopLight.jpg')no-repeat center center / cover;
 }
 
 [data-theme="dark"] {
     --BG_color: rgba(33, 36, 40, 1);
     --text_color: #ffffff;
-    --img: url('/images/DarkHomeDiskTop.jpg')no-repeat center center / cover;
+    --img: url('./DarkHomeDiskTop.jpg')no-repeat center center / cover;
 }
 
 body {
@@ -214,11 +214,11 @@ input:checked+.slider:before {
 /**************************** Media Queries -> Tablet ***********************/
 @media screen and (max-width: 1000px) {
     :root {
-        --img: url('/images/LightTablate.jpg')no-repeat center center / cover;
+        --img: url('./LightTablate.jpg')no-repeat center center / cover;
     }
 
     [data-theme="dark"] {
-        --img: url('/images/DarkHomeTablate.jpg')no-repeat center center / cover;
+        --img: url('./DarkHomeTablate.jpg')no-repeat center center / cover;
     }
 
     /*** NAV BAR ***/
@@ -286,11 +286,11 @@ input:checked+.slider:before {
 /**************************** Media Queries -> MOBILE ***********************/
 @media screen and (max-width: 500px) {
     :root {
-        --img: url('/images/PhoneLight.jpg')no-repeat center center / cover;
+        --img: url('./PhoneLight.jpg')no-repeat center center / cover;
     }
 
     [data-theme="dark"] {
-        --img: url('/images/DarkHomePhone.jpg')no-repeat center center / cover;
+        --img: url('./DarkHomePhone.jpg')no-repeat center center / cover;
     }
     #contact div li:nth-child(4n+4) {
         display: none;
