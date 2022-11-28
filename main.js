@@ -1,9 +1,8 @@
-const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
+const toggleSwitch = document.getElementById('checkbox');
 const currentTheme = localStorage.getItem('theme');
 
 if (currentTheme) {
     document.documentElement.setAttribute('data-theme', currentTheme);
-  
     if (currentTheme === 'dark') {
         toggleSwitch.checked = true;
     }
@@ -27,6 +26,8 @@ function Pages(btn) {
     var about = document.getElementById("about");
     let home = document.getElementById("home");
     let contact = document.getElementById('contact');
+
+    document.getElementById('burrger_btn').click()
     
     if(btn=='About'){
         if (window.getComputedStyle(about).display === "none") {

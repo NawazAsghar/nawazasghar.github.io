@@ -9,13 +9,13 @@
 :root {
     --BG_color: rgba(217, 217, 217, 1);
     --text_color: #000000;
-    --img: url('./DiskTopLight.jpg')no-repeat center center / cover;
+    --img: url('/images/DiskTopLight.jpg')no-repeat center center / cover;
 }
 
 [data-theme="dark"] {
     --BG_color: rgba(33, 36, 40, 1);
     --text_color: #ffffff;
-    --img: url('./DarkHomeDiskTop.jpg')no-repeat center center / cover;
+    --img: url('/images/DarkHomeDiskTop.jpg')no-repeat center center / cover;
 }
 
 body {
@@ -36,7 +36,6 @@ nav {
     align-items: center;
     justify-content: center;
 }
-
 nav ul {
     transition: background-color 2s;
     background-color: var(--BG_color);
@@ -48,13 +47,11 @@ nav ul {
     display: flex;
     flex-direction: row;
 }
-
 .logo li a {
     text-decoration: none;
     transition: color 2s;
     color: var(--text_color);
 }
-
 .logo {
     display: flex;
     align-items: center;
@@ -71,7 +68,6 @@ nav ul {
     color: var(--text_color);
 }
 .links {
-    /* font-size: 50px; */
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -159,66 +155,14 @@ nav ul {
     transition: 0.1s;
 }
 
-
-/**************************** MODE DARK/LIGHT ***********************/
-.theme-switch-wrapper {
-    display: flex;
-    align-items: center;
-}
-.theme-switch-wrapper em {
-    margin-left: 10px;
-    font-size: 1rem;
-}
-.theme-switch {
-    display: inline-block;
-    height: 34px;
-    position: relative;
-    width: 60px;
-}
-.theme-switch input {
-    display: none;
-}
-.slider {
-    background-color: #ccc;
-    bottom: 0;
-    cursor: pointer;
-    left: 0;
-    position: absolute;
-    right: 0;
-    top: 0;
-    transition: .4s;
-}
-.slider:before {
-    background-color: #fff;
-    bottom: 4px;
-    content: "";
-    height: 26px;
-    left: 4px;
-    position: absolute;
-    transition: .4s;
-    width: 26px;
-}
-input:checked+.slider {
-    background-color: #66bb6a;
-}
-input:checked+.slider:before {
-    transform: translateX(26px);
-}
-.slider.round {
-    border-radius: 34px;
-}
-.slider.round:before {
-    border-radius: 50%;
-}
-
 /**************************** Media Queries -> Tablet ***********************/
 @media screen and (max-width: 1000px) {
     :root {
-        --img: url('./LightTablate.jpg')no-repeat center center / cover;
+        --img: url('/images/LightTablate.jpg')no-repeat center center / cover;
     }
 
     [data-theme="dark"] {
-        --img: url('./DarkHomeTablate.jpg')no-repeat center center / cover;
+        --img: url('/images/DarkHomeTablate.jpg')no-repeat center center / cover;
     }
 
     /*** NAV BAR ***/
@@ -231,6 +175,21 @@ input:checked+.slider:before {
     }
     .links li button {
         font-size: 30px;
+    }
+
+    /*** MODE SWICH ***/
+    .toggle-control .control {
+        left: 10px;
+        height: 35px;
+        width: 70px;
+    }
+    .toggle-control .control::after{
+        top: 5px;
+        width: 25px;
+        height: 25px;
+    }
+    .toggle-control input:checked ~ .control:after {
+        left: 40px;
     }
 
     /*** HOME ***/
@@ -286,11 +245,11 @@ input:checked+.slider:before {
 /**************************** Media Queries -> MOBILE ***********************/
 @media screen and (max-width: 500px) {
     :root {
-        --img: url('./PhoneLight.jpg')no-repeat center center / cover;
+        --img: url('/images/PhoneLight.jpg')no-repeat center center / cover;
     }
 
     [data-theme="dark"] {
-        --img: url('./DarkHomePhone.jpg')no-repeat center center / cover;
+        --img: url('/images/DarkHomePhone.jpg')no-repeat center center / cover;
     }
     #contact div li:nth-child(4n+4) {
         display: none;

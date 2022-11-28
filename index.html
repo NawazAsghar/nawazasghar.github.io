@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="mode.css">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" media="screen and (max-width: 500px)" href="burrger.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
@@ -18,9 +19,17 @@
 
     <nav>
         <ul>
+            <ul class="logo">
+                <li><a href=""> N Z A </a></li>
+            </ul>
+            <ul class="links">
+                <li> <button onclick="Pages('About')">About</button></li>
+                <li> <button onclick="Pages('Contact')">Contact</button></li>
+            </ul>
+
             <div class="burgerUI">
                 <div id="menuToggle">
-                    <input type="checkbox" />
+                    <input id="burrger_btn" type="checkbox" />
                     
                     <span></span>
                     <span></span>
@@ -31,37 +40,18 @@
                         <a><li> <button onclick="Pages('Contact')">Contact</button></li></a>
                     </ul>
                 </div>
-                <div class="theme-switch-wrapper">
-                    <label class="theme-switch" for="checkbox">
-                        <input type="checkbox" id="checkbox" />
-                        <div class="slider round"></div>
-                    </label>
-                </div>
+
+                
             </div>
-
-            <ul class="logo">
-                <li><a href=""> N Z A </a></li>
-            </ul>
-            <ul class="links">
-                <li> <button onclick="Pages('About')">About</button></li>
-                <li> <button onclick="Pages('Contact')">Contact</button></li>
-
-                <div class="theme-switch-wrapper">
-                    <label class="theme-switch" for="checkbox">
-                        <input type="checkbox" id="checkbox" />
-                        <div class="slider round"></div>
-                    </label>
-                </div>
-
-            </ul>
+            
+            <div class="theme-switch-wrapper">
+                <label class="toggle-control">
+                    <input type="checkbox" id="checkbox" checked="checked">
+                    <span class="control"></span>
+                </label>
+            </div>
         </ul>
     </nav>
-
-
-
-
-
-
 
 
     <section class="home" id="home">
@@ -71,11 +61,13 @@
             <p class="profision">A full-stack webdeveloper</p>
         </div>
     </section>
+
     <section class="about" id="about">
         <p> &emsp; I am NawazAsghar (NZA). I'm a student lives in Peshawar Pakistan. <br>
             &emsp; Interested in web devlopment, and a full-stack web developer.I have worked in Python Django/Flask
             framework and Django rest_framework for API. Learning...</p>
     </section>
+
     <section class="contact" id="contact">
         <div class="icons">
             <li> <a href="https://www.linkedin.com/in/nawaz-asghar"><i class="fab fa-github"></i></a> </li>
