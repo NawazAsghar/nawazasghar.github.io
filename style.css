@@ -23,6 +23,7 @@ body {
     transition: background 2s;
     background: var(--img);
     display: grid;
+    overflow: hidden;
 }
 
 .burgerUI{
@@ -46,6 +47,7 @@ nav ul {
     width: 80%;
     display: flex;
     flex-direction: row;
+    align-items: center;
 }
 .logo li a {
     text-decoration: none;
@@ -262,6 +264,7 @@ nav ul {
         font-size: 5rem;
     }
     .about p {
-        font-size: 2rem;
+        font-size: 1.9rem;
+        text-align: inherit;
     }
 }
