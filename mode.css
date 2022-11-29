@@ -22,7 +22,7 @@
 }
 .toggle-control .control {
     position: absolute;
-    top: 15px;
+    top: -1vh;
     left: 0;
     height: 45px;
     width: 90px;
