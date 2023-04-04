@@ -1,0 +1,296 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    border: 0;
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+}
+
+:root {
+    --BG_color: rgba(217, 217, 217, 1);
+    --text_color: #000000;
+    --img: url('/images/DiskTopLight.jpg')no-repeat center center / cover;
+}
+
+[data-theme="dark"] {
+    --BG_color: rgba(33, 36, 40, 1);
+    --text_color: #ffffff;
+    --img: url('/images/DarkHomeDiskTop.jpg')no-repeat center center / cover;
+}
+
+body {
+    height: 100vh;
+    transition: background 2s;
+    background: var(--img);
+    display: grid;
+    overflow: hidden;
+}
+
+.burgerUI{
+    display: none;
+}
+
+/**************************** NAVIGATION BAR ***********************/
+nav {
+    height: 20vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+nav ul {
+    transition: background-color 2s;
+    background-color: var(--BG_color);
+    height: 8vh;
+    list-style: none;
+    display: flex;
+    border-radius: 1pc;
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.logo li a {
+    text-decoration: none;
+    transition: color 2s;
+    color: var(--text_color);
+}
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 70px;
+    letter-spacing: -16px;
+    margin-left: 10px;
+}
+
+.links li button {
+    background: none;
+    cursor: pointer;
+    font-size: 35px;
+    transition: color 2s;
+    color: var(--text_color);
+}
+.links {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+/**************************** HOME ***********************/
+.home {
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.info {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    color: var(--text_color);
+    transition: color 2s;
+}
+
+.hiThere {
+    font-size: 70px;
+}
+
+.thisIs {
+    font-size: 70px;
+}
+
+.name {
+    font-size: 100px;
+    font-weight: 700;
+}
+
+.profision {
+    font-size: 70px;
+}
+
+/**************************** About ***********************/
+.about {
+    height: 80vh;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+.about p {
+    width: 80%;
+    color: var(--text_color);
+    transition: color 2s;
+    font-size: 60px;
+    text-align: justify;
+    letter-spacing: -1;
+}
+
+/**************************** Contact ***********************/
+.contact {
+    height: 30vh;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.icons {
+    transition: background 2s !important;
+    width: 80%;
+    margin-top: 10pc;
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+    height: 154px;
+    border-radius: 1pc;
+    font-size: 4.5pc;
+    background-color: var(--BG_color);
+}
+
+.icons a {
+    transition: color 2s !important;
+    text-decoration: none;
+    color: var(--text_color);
+}
+
+.icons a:hover {
+    color: rgba(74, 74, 246, 0.405);
+    transition: 0.1s;
+}
+
+/**************************** Media Queries -> Tablet ***********************/
+@media screen and (max-width: 1000px) {
+    :root {
+        --img: url('/images/LightTablate.jpg')no-repeat center center / cover;
+    }
+
+    [data-theme="dark"] {
+        --img: url('/images/DarkHomeTablate.jpg')no-repeat center center / cover;
+    }
+
+    /*** NAV BAR ***/
+    .logo {
+        font-size: 50px;
+        letter-spacing: -11px;
+    }
+    nav ul {
+        width: 85%;
+    }
+    .links li button {
+        font-size: 30px;
+    }
+
+    /*** MODE SWICH ***/
+    .toggle-control .control {
+        left: 10px;
+        height: 35px;
+        width: 70px;
+        top: -1vh;
+    }
+    .toggle-control .control::after{
+        top: 5px;
+        width: 25px;
+        height: 25px;
+    }
+    .toggle-control input:checked ~ .control:after {
+        left: 40px;
+    }
+
+    /*** HOME ***/
+    .hiThere {
+        font-size: 50px;
+    }
+    .thisIs {
+        font-size: 50px;
+    }
+    .name {
+        font-size: 80px;
+        font-weight: 440;
+    }
+    .profision {
+        font-size: 50px;
+    }
+
+    /*** ABOUT ***/
+    .about p {
+        font-size: 50px;
+    }
+
+    /*** CONTACT ***/
+    .icons {
+        width: 85%;
+        height: 100px;
+        font-size: 4pc;
+    }
+}
+@media screen and (max-width: 638px) {
+    .about p {
+        font-size: 2.2rem;
+    }
+    .links li button {
+        font-size: 1rem;
+    }
+    .hiThere {
+        font-size: 40px;
+    }
+    .thisIs {
+        font-size: 40px;
+    }
+    .name {
+        font-size: 50px;
+    }
+    .icons {
+        font-size: 3rem;
+    }
+}
+/**************************** Media Queries -> MOBILE ***********************/
+@media screen and (max-width: 500px) {
+    :root {
+        --img: url('/images/PhoneLight.jpg')no-repeat center center / cover;
+    }
+
+    [data-theme="dark"] {
+        --img: url('/images/DarkHomePhone.jpg')no-repeat center center / cover;
+    }
+    #contact div li:nth-child(4n+4) {
+        display: none;
+    }
+    .icons{
+        width: 100%;
+        height: 100%;
+        display: grid;
+        grid-template-columns: auto auto;
+        font-size: 5rem;
+    }
+    .about p {
+        font-size: 1.5rem;
+        text-align: inherit;
+    }
+}
+
+
+.slide-top {
+	-webkit-animation: slide-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: slide-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+@-webkit-keyframes slide-top {
+    0% {
+      -webkit-transform: translateY(0);
+              transform: translateY(0);
+    }
+    100% {
+      -webkit-transform: translateY(-100px);
+              transform: translateY(-100px);
+    }
+  }
+  @keyframes slide-top {
+    0% {
+      -webkit-transform: translateY(0);
+              transform: translateY(0);
+    }
+    100% {
+      -webkit-transform: translateY(-100px);
+              transform: translateY(-100px);
+    }
+  }
+  
