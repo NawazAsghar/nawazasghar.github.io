@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan&display=swap');
+
+
 * {
     margin: 0px;
     padding: 0px;
@@ -10,6 +13,7 @@
     --BG_color: rgba(217, 217, 217, 1);
     --text_color: #000000;
     --img: url('/images/DiskTopLight.jpg')no-repeat center center / cover;
+    --font-Fam4: 'League Spartan', sans-serif;
 }
 
 [data-theme="dark"] {
@@ -53,6 +57,7 @@ nav ul {
     text-decoration: none;
     transition: color 2s;
     color: var(--text_color);
+    font-family: var(--font-Fam4);
 }
 .logo {
     display: flex;
@@ -66,6 +71,7 @@ nav ul {
     background: none;
     cursor: pointer;
     font-size: 35px;
+    font-family: var(--font-Fam4);
     transition: color 2s;
     color: var(--text_color);
 }
@@ -88,7 +94,19 @@ nav ul {
     display: flex;
     flex-direction: column;
     color: var(--text_color);
+    font-family: var(--font-Fam4);
     transition: color 2s;
+    animation: 1s fadeIn;
+    animation-fill-mode: forwards;
+    visibility: hidden;
+}
+@keyframes fadeIn {
+    99% {
+      visibility: hidden;
+    }
+    100% {
+      visibility: visible;
+    }
 }
 
 .hiThere {
@@ -118,9 +136,11 @@ nav ul {
 .about p {
     width: 80%;
     color: var(--text_color);
+    font-family: var(--font-Fam4);
     transition: color 2s;
     font-size: 60px;
     text-align: justify;
+    line-height: 8vh;
     letter-spacing: -1;
 }
 
