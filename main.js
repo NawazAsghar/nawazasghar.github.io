@@ -25,6 +25,7 @@ toggleSwitch.addEventListener('change', switchTheme, false);
 function Pages(btn) {
     var about = document.getElementById("about");
     let home = document.getElementById("home");
+    let projects = document.getElementById('projects');
     let contact = document.getElementById('contact');
 
     document.getElementById('burrger_btn').click()
@@ -37,6 +38,22 @@ function Pages(btn) {
             about.style.display = "flex";
         } else {
             about.style.display = "none";
+            projects.style.display = "none";
+            home.style.display = "flex";
+        }
+    }
+    else if(btn =='projects'){
+        if (window.getComputedStyle(projects).display === "none") {
+            home.style.display = "none";
+            contact.style.display = "none";
+            about.style.display = "none";
+            projects.style.transition = "visibility 2s";
+            projects.style.display = "flex";
+        } else {
+            projects.style.display = "none";
+            about.style.display = "none";
+            contact.style.display = "none";
+
             home.style.display = "flex";
         }
         
@@ -45,9 +62,11 @@ function Pages(btn) {
             home.style.display = "flex";
             contact.style.display = "flex";
             about.style.display = "none";
+            projects.style.display = "none";
         } else {
             about.style.display = "none";
             contact.style.display = "none";
+            projects.style.display = "none";
             home.style.display = "flex";
         }
     }

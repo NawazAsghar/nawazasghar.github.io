@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=League+Spartan&display=swap');
 
-
 * {
     margin: 0px;
     padding: 0px;
@@ -14,6 +13,7 @@
     --text_color: #000000;
     --img: url('/images/DiskTopLight.jpg')no-repeat center center / cover;
     --font-Fam4: 'League Spartan', sans-serif;
+    --lh: 1.4rem;
 }
 
 [data-theme="dark"] {
@@ -30,7 +30,7 @@ body {
     overflow: hidden;
 }
 
-.burgerUI{
+.burgerUI {
     display: none;
 }
 
@@ -41,6 +41,7 @@ nav {
     align-items: center;
     justify-content: center;
 }
+
 nav ul {
     transition: background-color 2s;
     background-color: var(--BG_color);
@@ -53,12 +54,14 @@ nav ul {
     flex-direction: row;
     align-items: center;
 }
+
 .logo li a {
     text-decoration: none;
     transition: color 2s;
     color: var(--text_color);
     font-family: var(--font-Fam4);
 }
+
 .logo {
     display: flex;
     align-items: center;
@@ -75,6 +78,7 @@ nav ul {
     transition: color 2s;
     color: var(--text_color);
 }
+
 .links {
     display: flex;
     align-items: center;
@@ -100,12 +104,14 @@ nav ul {
     animation-fill-mode: forwards;
     visibility: hidden;
 }
+
 @keyframes fadeIn {
     99% {
-      visibility: hidden;
+        visibility: hidden;
     }
+
     100% {
-      visibility: visible;
+        visibility: visible;
     }
 }
 
@@ -133,6 +139,7 @@ nav ul {
     align-items: center;
     justify-content: center;
 }
+
 .about p {
     width: 80%;
     color: var(--text_color);
@@ -178,6 +185,76 @@ nav ul {
     transition: 0.1s;
 }
 
+/**************************** Projects ***********************/
+.projects {
+    display: none;
+    height: 60vh;
+    align-items: center;
+    justify-content: center;
+    /* background-color: red; */
+}
+
+.ProContainer {
+    /* background-color: aqua; */
+    height: 50vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card {
+    
+    box-shadow: 3px 4px 6px 4px #b7b7b7;
+    background: rgba(0,0,0,0.2);
+    backface-visibility: 50%;
+    height: 50vh;
+    width: 20vw;
+    margin: 2pc;
+    border-radius: 6px;
+    overflow: hidden;
+}
+.card a{
+    text-decoration: none;
+    color: black;
+}
+.card span img {
+    width: 100%;
+    height: 50%;
+}
+
+.title p {
+    font-size: 1.2rem;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.title, .description{
+    padding: 0.4rem;
+}
+
+.description p {
+    --max-lines: 5;
+    position: relative;
+    max-height: calc(var(--lh) * var(--max-lines));
+    overflow: hidden;
+    line-height: var(--lh);
+}
+
+.description p::before {
+    position: absolute;
+    content: "...";
+    bottom: 0;
+    right: 0;
+}
+
+.description p::after {
+    content: "";
+    position: absolute;
+    right: 0;
+}
+
 /**************************** Media Queries -> Tablet ***********************/
 @media screen and (max-width: 1000px) {
     :root {
@@ -193,9 +270,11 @@ nav ul {
         font-size: 50px;
         letter-spacing: -11px;
     }
+
     nav ul {
         width: 85%;
     }
+
     .links li button {
         font-size: 30px;
     }
@@ -207,12 +286,14 @@ nav ul {
         width: 70px;
         top: -1vh;
     }
-    .toggle-control .control::after{
+
+    .toggle-control .control::after {
         top: 5px;
         width: 25px;
         height: 25px;
     }
-    .toggle-control input:checked ~ .control:after {
+
+    .toggle-control input:checked~.control:after {
         left: 40px;
     }
 
@@ -220,13 +301,16 @@ nav ul {
     .hiThere {
         font-size: 50px;
     }
+
     .thisIs {
         font-size: 50px;
     }
+
     .name {
         font-size: 80px;
         font-weight: 440;
     }
+
     .profision {
         font-size: 50px;
     }
@@ -243,26 +327,33 @@ nav ul {
         font-size: 4pc;
     }
 }
+
 @media screen and (max-width: 638px) {
     .about p {
         font-size: 2.2rem;
     }
+
     .links li button {
         font-size: 1rem;
     }
+
     .hiThere {
         font-size: 40px;
     }
+
     .thisIs {
         font-size: 40px;
     }
+
     .name {
         font-size: 50px;
     }
+
     .icons {
         font-size: 3rem;
     }
 }
+
 /**************************** Media Queries -> MOBILE ***********************/
 @media screen and (max-width: 500px) {
     :root {
@@ -272,16 +363,19 @@ nav ul {
     [data-theme="dark"] {
         --img: url('/images/DarkHomePhone.jpg')no-repeat center center / cover;
     }
+
     #contact div li:nth-child(4n+4) {
         display: none;
     }
-    .icons{
+
+    .icons {
         width: 100%;
         height: 100%;
         display: grid;
         grid-template-columns: auto auto;
         font-size: 5rem;
     }
+
     .about p {
         font-size: 1.5rem;
         text-align: inherit;
@@ -290,27 +384,30 @@ nav ul {
 
 
 .slide-top {
-	-webkit-animation: slide-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-	        animation: slide-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    -webkit-animation: slide-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    animation: slide-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
+
 @-webkit-keyframes slide-top {
     0% {
-      -webkit-transform: translateY(0);
-              transform: translateY(0);
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
     }
+
     100% {
-      -webkit-transform: translateY(-100px);
-              transform: translateY(-100px);
+        -webkit-transform: translateY(-100px);
+        transform: translateY(-100px);
     }
-  }
-  @keyframes slide-top {
+}
+
+@keyframes slide-top {
     0% {
-      -webkit-transform: translateY(0);
-              transform: translateY(0);
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
     }
+
     100% {
-      -webkit-transform: translateY(-100px);
-              transform: translateY(-100px);
+        -webkit-transform: translateY(-100px);
+        transform: translateY(-100px);
     }
-  }
-  
+}
