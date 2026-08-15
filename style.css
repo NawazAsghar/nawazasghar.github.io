@@ -45,7 +45,7 @@ nav {
 nav ul {
     transition: background-color 2s;
     background-color: var(--BG_color);
-    height: 8vh;
+    height: 10vh;
     list-style: none;
     display: flex;
     border-radius: 1pc;
@@ -83,6 +83,7 @@ nav ul {
     display: flex;
     align-items: center;
     justify-content: space-around;
+    gap: 1rem;
 }
 
 /**************************** HOME ***********************/
@@ -292,7 +293,9 @@ nav ul {
         width: 25px;
         height: 25px;
     }
-
+    .toggle-control{
+        margin-bottom: 3vh;
+    }
     .toggle-control input:checked~.control:after {
         left: 40px;
     }
