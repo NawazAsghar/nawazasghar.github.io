@@ -24,29 +24,37 @@
                 <li><a href=""> N Z A </a></li>
             </ul>
             <ul class="links">
-                <li> <button onclick="Pages('About')">About</button></li>
                 <li> <button onclick="Pages('projects')">Projects</button></li>
+                <li> <button onclick="Pages('About')">About</button></li>
                 <li> <button onclick="Pages('Contact')">Contact</button></li>
             </ul>
 
             <div class="burgerUI">
                 <div id="menuToggle">
-                    <input id="burrger_btn" type="checkbox"/>
-                    
+                    <input id="burrger_btn" type="checkbox" />
+
                     <span></span>
                     <span></span>
                     <span></span>
                     <ul id="menu">
-                        <a><li><a href=""> N Z A </a></li></a>
-                        <a><li><button onclick="Pages('About')">About</button></li></a>
-                        <a><li><button onclick="Pages('projects')">Projects</button></li></a>
-                        <a><li> <button onclick="Pages('Contact')">Contact</button></li></a>
+                        <a>
+                            <li><a href=""> N Z A </a></li>
+                        </a>
+                        <a>
+                            <li><button onclick="Pages('projects')">Projects</button></li>
+                        </a>
+                        <a>
+                            <li><button onclick="Pages('About')">About</button></li>
+                        </a>
+                        <a>
+                            <li> <button onclick="Pages('Contact')">Contact</button></li>
+                        </a>
                     </ul>
                 </div>
 
-                
+
             </div>
-            
+
             <div class="theme-switch-wrapper">
                 <label class="toggle-control">
                     <input type="checkbox" id="checkbox" checked="checked">
@@ -74,34 +82,68 @@
         <div class="ProContainer">
 
             <div class="card">
-                <a href="https://bebloger.up.railway.app/">
-                    <span><img src="/images/BlogerThum.png" alt="" srcset=""></span>
-                    <div class="title"><p>A bloger site with CRUD operation</p></div>
-                    <div class="description"><p>Implement Django-CKEditor to simplify
-                        content updates and enable a user-friendly editing interface.
-                        Leverage Bootstrap's sleek UI components</p></div>
+                <a href="https://pharmacare-nza.vercel.app/" target="_blank"
+                    rel="noopener noreferrer">
+                    <div class="card-image">
+                        <img src="/images/pharmacare.png" alt="Pharmacy Management System">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="title">Pharmacy Management System</h3>
+                        <p class="description">
+                            Full-stack web app built with Django and React. Manages inventory,
+                            prescriptions, and sales records with a clean admin interface and
+                            REST API backend.
+                        </p>
+                    </div>
                 </a>
             </div>
-            <div class="card">
-                <a href="https://github.com/NawazAsghar/NodeReact_ChatApp">
-                    <span><img src="/images/crupChat.jpeg" alt="" srcset=""></span>
-                    <div class="title"><p>A chatapp with node js, react and chatengine.io </p></div>
-                    <div class="description"><p>Leveraging chatengine.io for seamless storage of chats and users,
-                        facilitating efficient data management and storage for enhanced user
-                        experience.</p></div>
-                </a>
-            </div>
-            <div class="card">
-                <a href="https://github.com/NawazAsghar/Shipsshops">
-                    <span><img src="/images/crupShopX.jpeg" alt="" srcset=""></span>
-                    <div class="title"><p>A Shipshop e-commerce site</p></div>
-                    <div class="description"><p>Seamless PayPal integration for secure transactions. Product catalog, shopping cart, and
-                        user authentication.Developed as a course project, providing practical insights into
-                        e-commerce development.</p></div>
-                </a>
-            </div>
-           
 
+            <div class="card">
+                <a href="https://bebloger.up.railway.app/" target="_blank" rel="noopener noreferrer">
+                    <div class="card-image">
+                        <img src="/images/BlogerThum.png" alt="Bebloger project preview">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="title">A blogger site with CRUD operations</h3>
+                        <p class="description">
+                            Implement Django-CKEditor to simplify content updates and enable a user-friendly editing
+                            interface. Leverage Bootstrap's sleek UI components.
+                        </p>
+                    </div>
+                </a>
+            </div>
+
+
+            <div class="card">
+                <a href="https://github.com/NawazAsghar/NodeReact_ChatApp" target="_blank" rel="noopener noreferrer">
+                    <div class="card-image">
+                        <img src="/images/crupChat.jpeg" alt="" srcset="">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="title">A chatapp with node js, react and chatengine.io</h3>
+                        <p class="description">
+                            Leveraging chatengine.io for seamless storage of chats and users,
+                            facilitating efficient data management and storage for enhanced user
+                            experience.
+                        </p>
+                    </div>
+                </a>
+            </div>
+            <div class="card">
+                <a href="https://github.com/NawazAsghar/Shipsshops" target="_blank" rel="noopener noreferrer">
+                    <div class="card-image">
+                        <img src="/images/crupShopX.jpeg" alt="" srcset="">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="title">A Shipshop e-commerce site</h3>
+                        <p class="description">
+                            Seamless PayPal integration for secure transactions. Product catalog, shopping cart, and
+                            user authentication.Developed as a course project, providing practical insights into
+                            e-commerce development.
+                        </p>
+                    </div>
+                </a>
+            </div>
         </div>
     </section>
 
@@ -110,7 +152,8 @@
             <li> <a href="https://github.com/NawazAsghar"><i class="fab fa-github"></i></a> </li>
             <li> <a href="https://www.linkedin.com/in/nawaz-asghar"><i class="fab fa-linkedin"></i></a> </li>
             <li> <a href='https://www.instagram.com/nawaz__asghar/?hl=en'><i class="fab fa-instagram"></i></a> </li>
-            <li> <a href='https://www.facebook.com/profile.php?id=100057012705941&mibextid=ZbWKwL'><i class="fab fa-facebook"></i></a>
+            <li> <a href='https://www.facebook.com/profile.php?id=100057012705941&mibextid=ZbWKwL'><i
+                        class="fab fa-facebook"></i></a>
             </li>
             <li> <a href='https://twitter.com/NZA__14'><i class="fab fa-twitter"></i></a>
             </li>

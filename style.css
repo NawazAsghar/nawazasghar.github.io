@@ -8,6 +8,20 @@
     box-sizing: border-box;
 }
 
+/* Target only theme-affected elements */
+body,
+nav,
+.navbar,
+header,
+footer,
+.card,
+a,
+p,
+h1, h2, h3, h4, h5, h6 {
+    transition: background-color 0.45s ease-in, 
+                color 0.45s ease-in;
+}
+
 :root {
     --BG_color: rgba(217, 217, 217, 1);
     --text_color: #000000;
@@ -23,11 +37,13 @@
 }
 
 body {
-    height: 100vh;
+    min-height: 100dvh;
+    max-height: auto;
+
     transition: background 2s;
     background: var(--img);
     display: grid;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 .burgerUI {
@@ -88,7 +104,7 @@ nav ul {
 
 /**************************** HOME ***********************/
 .home {
-    height: 50vh;
+    height: 80dvh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -192,68 +208,119 @@ nav ul {
     height: 60vh;
     align-items: center;
     justify-content: center;
-    /* background-color: red; */
+    height: auto;
 }
 
 .ProContainer {
-    /* background-color: aqua; */
-    height: 50vh;
-    width: 100vw;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    width: 80%;
+    margin: 0 auto; /* Centers .ProContainer on the page horizontally */
+    min-height: 50vh; /* Allows the container to grow vertically when cards wrap */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+    box-sizing: border-box;
+
+    /* 1. Track Centering (Positions the overall grid inside the 50vh space) */
+    justify-content: center; /* Horizontally centers grid tracks */
+    align-content: center;   /* Vertically centers grid tracks within min-height: 50vh */
+
+    /* 2. Item Centering (Positions elements inside their individual grid cells) */
+    justify-items: center;   /* Horizontally centers content inside each cell */
+    align-items: center;     /* Vertically centers content inside each cell */
+}
+
+/* Example styling for grid items */
+.card {
+    width: 100%;
+    max-width: 350px;
+    padding: 0.3rem;
+    overflow: hidden;
+    background: #f4f4f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .card {
-    
-    box-shadow: 3px 4px 6px 4px #b7b7b7;
-    background: rgba(0,0,0,0.2);
-    backface-visibility: 50%;
-    height: 50vh;
-    width: 20vw;
-    margin: 2pc;
-    border-radius: 6px;
-    overflow: hidden;
-}
-.card a{
-    text-decoration: none;
-    color: black;
-}
-.card span img {
-    width: 100%;
-    height: 50%;
-}
-
-.title p {
-    font-size: 1.2rem;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    white-space: nowrap;
-}
-
-.title, .description{
-    padding: 0.4rem;
-}
-
-.description p {
-    --max-lines: 5;
     position: relative;
-    max-height: calc(var(--lh) * var(--max-lines));
+    background: var(--BG_color);
+    border-radius: 16px;
     overflow: hidden;
-    line-height: var(--lh);
+    
+    /* Subtle base border with dual-layer inset shadow for depth */
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 
+        0 10px 25px -5px rgba(0, 0, 0, 0.1),
+        inset 0 1px 0 0 rgba(255, 255, 255, 0.2);
+    
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.description p::before {
-    position: absolute;
-    content: "...";
-    bottom: 0;
-    right: 0;
+.card:hover {
+    transform: translateY(-8px);
+    /* Vibrant accent border transition */
+    border-color: rgba(99, 102, 241, 0.6);
+    box-shadow: 
+        0 20px 35px -10px rgba(0, 0, 0, 0.2),
+        0 0 25px rgba(99, 102, 241, 0.3); /* Soft outer glow */
 }
 
-.description p::after {
-    content: "";
-    position: absolute;
-    right: 0;
+.card a {
+    text-decoration: none;
+    color: var(--text_color);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+/* Image container with smooth zoom effect */
+.card-image {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    background: rgba(0, 0, 0, 0.05);
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.card:hover .card-image img {
+    transform: scale(1.05);
+}
+
+/* Content layout */
+.card-content {
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin: 0;
+    color: var(--text_color);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Native multi-line truncation */
+.description {
+    font-size: 0.9rem;
+    line-height: var(--lh, 1.4rem);
+    color: var(--text_color);
+    opacity: 0.8;
+    margin: 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* Truncates clean after 3 lines */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
 
 /**************************** Media Queries -> Tablet ***********************/
@@ -281,6 +348,8 @@ nav ul {
     }
 
     /*** MODE SWICH ***/
+
+    .theme-switch-wrapper { display: flex; align-items: center; }
     .toggle-control .control {
         left: 10px;
         height: 35px;

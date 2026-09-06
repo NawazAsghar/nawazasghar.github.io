@@ -2,21 +2,19 @@ const toggleSwitch = document.getElementById('checkbox');
 const currentTheme = localStorage.getItem('theme');
 
 if (currentTheme) {
+    // Returning visitor — restore their preference
     document.documentElement.setAttribute('data-theme', currentTheme);
-    if (currentTheme === 'dark') {
-        toggleSwitch.checked = true;
-    }
+    toggleSwitch.checked = currentTheme === 'dark';
+} else {
+    // First visit — set dark as the default to match the checked checkbox
+    document.documentElement.setAttribute('data-theme', 'dark');
+    localStorage.setItem('theme', 'dark');
 }
 
 function switchTheme(e) {
-    if (e.target.checked) {
-        document.documentElement.setAttribute('data-theme', 'dark');
-        localStorage.setItem('theme', 'dark');
-    }
-    else {        
-        document.documentElement.setAttribute('data-theme', 'light');
-        localStorage.setItem('theme', 'light');
-    }    
+    const theme = e.target.checked ? 'dark' : 'light';
+    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem('theme', theme);
 }
 
 toggleSwitch.addEventListener('change', switchTheme, false);
@@ -36,6 +34,7 @@ function Pages(btn) {
             contact.style.display = "none";
             about.style.transition = "visibility 2s";
             about.style.display = "flex";
+            projects.style.display = "none";
         } else {
             about.style.display = "none";
             projects.style.display = "none";
